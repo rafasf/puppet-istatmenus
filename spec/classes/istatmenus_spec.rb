@@ -4,8 +4,8 @@ describe 'istatmenus' do
   context 'default' do
     let(:file_name) { 'istatmenus4.06' }
 
-    it { should contain_package(file_name).with_provider('compressed_app') }
-    it { should contain_package(file_name).with_source("http://s3.amazonaws.com/bjango/files/istatmenus4/#{file_name}.zip") }
+    it { should contain_package('iStat Menus').with_provider('compressed_app') }
+    it { should contain_package('iStat Menus').with_source("http://s3.amazonaws.com/bjango/files/istatmenus4/#{file_name}.zip") }
   end
 
   context 'specific version' do
@@ -13,8 +13,8 @@ describe 'istatmenus' do
     let(:file_name) { "istatmenus#{version}" }
     let(:params) { { :version => version } }
 
-    it { should contain_package(file_name).with_provider('compressed_app') }
-    it { should contain_package(file_name).with_source("http://s3.amazonaws.com/bjango/files/istatmenus3/#{file_name}.zip") }
+    it { should contain_package('iStat Menus').with_provider('compressed_app') }
+    it { should contain_package('iStat Menus').with_source("http://s3.amazonaws.com/bjango/files/istatmenus3/#{file_name}.zip") }
   end
 
   context 'invalid version' do
