@@ -16,7 +16,7 @@ class istatmenus ($version = '4.06') {
   $folder = "istatmenus${main_version}"
   $file_name = "istatmenus${version}"
 
-  package { $file_name:
+  package { 'iStat Menus':
     provider => 'compressed_app',
     source   => "http://s3.amazonaws.com/bjango/files/${folder}/${file_name}.zip"
   }
