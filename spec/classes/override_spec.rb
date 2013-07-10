@@ -11,7 +11,7 @@ describe 'istatmenus::override' do
         :key    => 'menuExtras',
         :value_type => 'array',
         :value  => params[:names],
-        :notify => 'Exec[Kill SystemUI]'
+        :notify => [ 'Exec[Kill SystemUI]', 'Exec[Ensure user permission]' ]
       })
     }
   end

@@ -12,10 +12,14 @@ class istatmenus::override ($names = []) {
     key        => 'menuExtras',
     value_type => 'array',
     value      => $names,
-    notify     => Exec['Kill SystemUI']
+    notify     => [ Exec['Kill SystemUI'], Exec['Ensure user permission'] ]
   }
 
   exec { 'Kill SystemUI':
     command => 'killall SystemUIServer'
+  }
+
+  exec { 'Ensure user permission':
+    command => "chmod 644 /Users/${::luser}/Library/Preferences/com.apple.systemuiserver.plist"
   }
 }
