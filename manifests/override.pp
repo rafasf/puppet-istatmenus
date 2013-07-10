@@ -20,6 +20,7 @@ class istatmenus::override ($names = []) {
   }
 
   exec { 'Ensure user permission':
-    command => "chmod 644 /Users/${::luser}/Library/Preferences/com.apple.systemuiserver.plist"
+    command => "chmod 644 /Users/${::luser}/Library/Preferences/com.apple.systemuiserver.plist",
+    user    => root
   }
 }
