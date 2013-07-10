@@ -1,4 +1,5 @@
 # iStatMenus Puppet Module for Boxen
+[![Build Status](https://travis-ci.org/rafasf/puppet-istatmenus.png?branch=master)](https://travis-ci.org/rafasf/puppet-istatmenus)
 
 This is suppose to be a version agnostic iStatMenus module.
 
